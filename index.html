@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görev Listesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Görev Listesi</h1>
+        
+        <!-- Hata mesajı alanı -->
+        <div id="hataMesaji" class="hata-mesaji"></div>
+        
+        <form id="gorevFormu">
+            <div class="form-grup">
+                <label for="baslik">Başlık (Zorunlu):</label>
+                <input type="text" id="baslik">
+            </div>
+            
+            <div class="form-grup">
+                <label for="aciklama">Açıklama (Opsiyonel):</label>
+                <textarea id="aciklama"></textarea>
+            </div>
+            
+            <div class="form-grup">
+                <label>Öncelik:</label>
+                <div class="oncelik-grup">
+                    <input type="radio" id="dusuk" name="oncelik" value="Düşük">
+                    <label for="dusuk">Düşük</label>
+                    
+                    <input type="radio" id="orta" name="oncelik" value="Orta">
+                    <label for="orta">Orta</label>
+                    
+                    <input type="radio" id="yuksek" name="oncelik" value="Yüksek">
+                    <label for="yuksek">Yüksek</label>
+                </div>
+            </div>
+            
+            <button type="submit">Görev Ekle</button>
+        </form>
+
+        <div class="filtre-butonlar">
+            <button class="filtre-buton aktif" data-filtre="hepsi">Tümü</button>
+            <button class="filtre-buton" data-filtre="aktif">Aktif</button>
+            <button class="filtre-buton" data-filtre="tamamlandi">Tamamlanan</button>
+        </div>
+
+        <!-- Filtreleme ve sıralama butonları -->
+        <div class="butonlar">
+            <div class="siralama-butonlar">
+                <button id="oncelikSirala" class="siralama-buton">
+                    Önceliğe Göre Sırala
+                    <span class="ok-isaret">↓</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="gorevListesi">
+            <!-- Görevler buraya dinamik olarak eklenecek -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2025 Görev Yönetim Uygulaması. Tüm hakları saklıdır.</p>
+            <div class="social-links">
+                <a href="https://github.com/00k4zN" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/%C3%B6zkan-yavuz-447b4a238/" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
